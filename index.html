@@ -172,47 +172,71 @@ footer{text-align:center;margin-top:2rem;padding:1rem;color:var(--muted);font-si
 
   <!-- PRENOTA -->
   <section aria-labelledby="prenota-title" >
-    <h2 id="prenota-title">Prenota un colloquio</h2>
+    <h2 id="prenota-title">Prenota un colloquio o chiedi informazioni</h2>
     <div class="card">
-      <form action="#" method="post" novalidate>
+      <form action="https://formspree.io/f/tuo-id" method="POST">
+  <label for="nome">Nome e Cognome</label>
+  <input id="nome" name="nome" type="text" placeholder="Es. Maria Rossi" required>
 
-        <label for="nome">Nome e Cognome</label>
-        <input id="nome" name="nome" type="text" placeholder="Es. Maria Rossi" required>
+  <label for="eta">Età</label>
+  <input id="eta" name="eta" type="number" placeholder="Es. 28" required>
 
-        <label for="eta">Età</label>
-        <input id="eta" name="eta" type="number" placeholder="Es. 28" required>
+  <label for="modalita">Modalità dell'incontro</label>
+  <select id="modalita" name="modalita" required>
+    <option value="online">Online</option>
+    <option value="domicilio">A domicilio</option>
+    <option value="presenza">In presenza</option>
+  </select>
 
-        <label for="modalita">Modalità dell'incontro</label>
-        <select id="modalita" name="modalita" required>
-          <option value="online">Online</option>
-          <option value="domicilio">A domicilio</option>
-          <option value="presenza">In presenza</option>
-        </select>
+  <label for="orario">Preferenze orario</label>
+  <select id="orario" name="orario" required>
+    <option value="mattina">Mattina</option>
+    <option value="pomeriggio">Pomeriggio</option>
+    <option value="indifferente">Indifferente</option>
+  </select>
 
-        <label for="orario">Preferenze orario</label>
-        <select id="orario" name="orario" required>
-          <option value="mattina">Mattina</option>
-          <option value="pomeriggio">Pomeriggio</option>
-          <option value="indifferente">Indifferente</option>
-        </select>
+  <label for="motivazione">Breve motivazione della richiesta</label>
+  <textarea id="motivazione" name="motivazione" placeholder="Scrivi qui..." required></textarea>
 
-        <label for="motivazione">Breve motivazione della richiesta</label>
-        <textarea id="motivazione" name="motivazione" placeholder="Scrivi qui..." required></textarea>
+  <label for="email_contatto">Indirizzo email dove essere contattati</label>
+  <input id="email_contatto" name="_replyto" type="email" placeholder="esempio@mail.com" required>
 
-        <label for="email_contatto">Indirizzo email dove essere contattati</label>
-        <input id="email_contatto" name="email_contatto" type="email" placeholder="esempio@mail.com" required>
+  <label for="telefono">Numero di telefono</label>
+  <input id="telefono" name="telefono" type="tel" placeholder="Es. 3662266101" required>
 
-        <label for="telefono">Numero di telefono</label>
-        <input id="telefono" name="telefono" type="tel" placeholder="Es. 3662266101" required>
+  <p class="privacy">I dati forniti saranno trattati esclusivamente ai fini della gestione della richiesta di colloquio, nel rispetto della normativa vigente sulla privacy.</p>
 
-        <p class="privacy">I dati forniti saranno trattati esclusivamente ai fini della gestione della richiesta di colloquio, nel rispetto della normativa vigente sulla privacy.</p>
+  <button type="submit">Invia richiesta</button>
 
-        <button type="submit">Invia richiesta</button>
-      </form>
-    </div>
-  </section>
+  <!-- Contenitore messaggio di conferma -->
+  <div id="success-message" style="display:none; color:green; margin-top:1rem;">
+    Grazie! La tua richiesta è stata inviata.
+  </div>
+</form>
 
-</main>
+<script>
+const form = document.querySelector("form");
+const msg = document.getElementById("success-message");
+
+form.addEventListener("submit", function(e){
+  e.preventDefault(); // ferma l’invio normale
+  const data = new FormData(form);
+  fetch(form.action, {
+    method: "POST",
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      msg.style.display = "block"; // mostra il messaggio
+      form.reset(); // pulisce il form
+    } else {
+      alert("Si è verificato un errore. Riprova più tardi.");
+    }
+  }).catch(() => {
+    alert("Si è verificato un errore. Riprova più tardi.");
+  });
+});
+</script>
 
 
 
