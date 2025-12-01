@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Evelyn De Giorgi – Psicologa</title>
+
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f6f2ec; --card:#faf7f3; --accent:#d6c4af; --text:#4a3f35; --muted:#5b5147;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Roboto,system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text)}
+header{text-align:center;padding:2.5rem 1rem;background:linear-gradient(180deg,rgba(232,223,212,0.95),rgba(232,223,212,0.9))}
+h1{margin:0;font-family:'Playfair Display',serif;font-size:2rem;color:#3b3228}
+header p{margin:.6rem 0 0;color:var(--muted)}
+main{max-width:980px;margin:2rem auto;padding:0 1rem}
+section{margin:2rem 0;padding:1rem;border-radius:10px}
+section:nth-of-type(even){background:#f0ebe4}
+h2{font-family:'Playfair Display',serif;font-size:1.4rem;margin:0 0 .9rem;color:#3b3228;border-left:4px solid var(--accent);padding-left:.6rem}
+
+/* Fade-in */
+
+
+
+.card{background:var(--card);padding:1.2rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.05);transition:transform .28s ease, box-shadow .28s ease}
+.card:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 14px 30px rgba(0,0,0,0.12)}
+
+.chi{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:center}
+.photo{width:120px;height:120px;border-radius:50%;overflow:hidden;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.photo img{width:100%;height:100%;object-fit:cover}
+.lead{margin:0;line-height:1.6;text-align:justify}
+
+.grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.item{flex:1 1 230px;display:flex;gap:10px;align-items:flex-start;background:#f6f2ec;padding:.8rem;border-radius:10px;box-shadow:0 6px 12px rgba(0,0,0,0.04)}
+.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:8px;background:linear-gradient(180deg,rgba(214,196,175,0.18),transparent)}
+
+/* Contatti migliorati */
+.contact-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.contact-row i{width:32px;height:32px;display:grid;place-items:center;background:rgba(0,0,0,0.06);border-radius:6px}
+
+/* Form */
+form{display:flex;flex-direction:column;gap:.5rem}
+input,select,textarea{padding:.7rem;border-radius:8px;border:1px solid #d7d0c6;background:#fff}
+input:focus,select:focus,textarea:focus{outline:none;box-shadow:0 0 0 4px rgba(197,178,156,0.12);border-color:var(--accent)}
+button{margin-top:.6rem;padding:.65rem .9rem;border-radius:8px;border:none;background:var(--accent);cursor:pointer;font-weight:600;color:#3b3228}
+
+footer{text-align:center;margin-top:2rem;padding:1rem;color:var(--muted);font-size:.85rem}
+
+/* WhatsApp button */
+.whatsapp{position:fixed;bottom:16px;right:16px;background:#25D366;color:white;padding:14px;border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,0.2);font-size:22px;z-index:20}
+
+@media(max-width:720px){
+  .chi{grid-template-columns:96px 1fr}
+  .item{flex:1 1 100%}
+  .photo{width:96px;height:96px}
+}
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.logo {
+  width: 70px;  
+  height: auto;
+}
+</style>
+</head>
+<body>
+
+<header class="header-title">
+  <img src="logo.png" alt="logo Evelyn De Giorgi" class="logo">
+
+  <div>
+    <h1>Evelyn De Giorgi – Psicologa</h1>
+    <p>Supporto psicologico per preadolescenti, adolescenti, giovani adulti e adulti</p>
+  </div>
+
+</header>
+
+<main>
+
+  <!-- CHI SONO -->
+  <section aria-labelledby="chi-title" >
+    <h2 id="chi-title">Chi sono</h2>
+    <div class="card chi" role="region" aria-label="Chi sono">
+      <div class="photo" aria-hidden="true">
+        <img src="photo.jpg" alt="Foto Evelyn">
+      </div>
+      <div>
+        <p class="lead">La storia di ognuno di noi è unica, fatta di intrecci che danno forma a ciò che siamo e che vorremo essere. <br> I capitoli sono molti e spesso così complessi che, a volte, perdiamo il filo. Qui troverai uno spazio sicuro in cui prenderci cura della tua narrazione insieme, per dare vita a una versione più libera e autentica, la tua.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section aria-labelledby="servizi-title" >
+    <h2 id="servizi-title">Servizi</h2>
+    <div class="grid" role="list">
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></div>
+        <div><strong>Supporto psicologico individuale</strong><br><span>Percorsi personalizzati per esplorare vissuti, emozioni e cambiamenti.</span></div>
+      </div>
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></div>
+        <div><strong>Orientamento scolastico e motivazionale</strong><br><span>Supporto per scelte, motivazione e progettazione del percorso.</span></div>
+      </div>
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-people-line"></i></div>
+        <div><strong>Sostegno alla maternità e genitorialità</strong><br><span>Percorsi per supportare la relazione genitore-figlio e le dinamiche familiari.</span></div>
+      </div>
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-bowl-food"></i></div>
+        <div><strong>Supporto per difficoltà alimentari</strong><br><span>Percorsi empatici per migliorare il rapporto con il cibo e con il proprio corpo.</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MODALITA -->
+  <section aria-labelledby="modalita-title" >
+    <h2 id="modalita-title">Modalità degli incontri</h2>
+    <div class="grid" role="list">
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-house"></i></div>
+        <div><strong>A domicilio</strong><br><span>In un luogo intimo e familiare.</span></div>
+      </div>
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-video"></i></div>
+        <div><strong>Online</strong><br><span>Comodamente da casa.</span></div>
+      </div>
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-building"></i></div>
+        <div><strong>In studio</strong><br><span>Nardò.</span></div>
+      </div>
+
+      <div class="item" role="listitem">
+        <div class="icon" aria-hidden="true"><i class="fa-solid fa-tree"></i></div>
+        <div><strong>All’aperto</strong><br><span>In contesti naturali, per respirare.</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section aria-labelledby="contatti-title" >
+    <h2 id="contatti-title">Contatti</h2>
+    <div class="card">
+
+      <div class="contact-row"><i class="fa-solid fa-envelope"></i><span><strong>Email:</strong> <a href="mailto:evelyn.degiorgi@outlook.it">evelyn.degiorgi@outlook.it</a></span></div>
+      <div class="contact-row"><i class="fa-solid fa-phone"></i><span><strong>Cellulare:</strong> <a href="tel:+393662266101">366 226 6101</a></span></div>
+      <div class="contact-row"><i class="fa-solid fa-location-dot"></i><span><strong>Studio:</strong> Nardò</span></div>
+      <div class="contact-row"><i class="fa-solid fa-file-invoice"></i><span><strong>Partita IVA:</strong> 04210900363</span></div>
+
+    </div>
+  </section>
+
+  <!-- PRENOTA -->
+  <section aria-labelledby="prenota-title" >
+    <h2 id="prenota-title">Prenota un colloquio</h2>
+    <div class="card">
+      <form action="#" method="post" novalidate>
+
+        <label for="nome">Nome e Cognome</label>
+        <input id="nome" name="nome" type="text" placeholder="Es. Maria Rossi" required>
+
+        <label for="eta">Età</label>
+        <input id="eta" name="eta" type="number" placeholder="Es. 28" required>
+
+        <label for="modalita">Modalità dell'incontro</label>
+        <select id="modalita" name="modalita" required>
+          <option value="online">Online</option>
+          <option value="domicilio">A domicilio</option>
+          <option value="presenza">In presenza</option>
+        </select>
+
+        <label for="orario">Preferenze orario</label>
+        <select id="orario" name="orario" required>
+          <option value="mattina">Mattina</option>
+          <option value="pomeriggio">Pomeriggio</option>
+          <option value="indifferente">Indifferente</option>
+        </select>
+
+        <label for="motivazione">Breve motivazione della richiesta</label>
+        <textarea id="motivazione" name="motivazione" placeholder="Scrivi qui..." required></textarea>
+
+        <label for="email_contatto">Indirizzo email dove essere contattati</label>
+        <input id="email_contatto" name="email_contatto" type="email" placeholder="esempio@mail.com" required>
+
+        <label for="telefono">Numero di telefono</label>
+        <input id="telefono" name="telefono" type="tel" placeholder="Es. 3662266101" required>
+
+        <p class="privacy">I dati forniti saranno trattati esclusivamente ai fini della gestione della richiesta di colloquio, nel rispetto della normativa vigente sulla privacy.</p>
+
+        <button type="submit">Invia richiesta</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+
+
+
+
+<!-- WhatsApp Button -->
+<a class="whatsapp" href="https://wa.me/393662266101" aria-label="Contatta su WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<p style="text-align:center; margin:1rem 0; color:var(--muted); font-size:.85rem;">Evelyn De Giorgi – Psicologa (Albo Emilia-Romagna n. 11650) · © 2025</p>
+</body>
+</html>
